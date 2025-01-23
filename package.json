@@ -1,0 +1,19 @@
+{
+  "name": "faiss-node-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "faiss-node": "^0.5.1",
+    "@langchain/google-vertexai": "0.1.0",
+    "@langchain/community": "^0.3.11",
+    "remeda": "^2.6.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
