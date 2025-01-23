@@ -20,16 +20,24 @@ const assetClassesVectorStore = await assetClassesEmbeddings.loadStore();
 
 console.log("Asset classes loaded!");
 
-["Alternatives", "Foobar"].forEach(async (text) => {
-    const result = await assetClassesVectorStore
-        .similaritySearch("Alternatives", 5)
-        .then((docs) =>
-            docs.map((d) =>
-                JSON.stringify({
-                    name: d.metadata.name,
-                    ...d.metadata,
-                })
-            )
-        );
-    console.log(text, result);
-});
+if (process.env.RUN_SIMILARITY_SEARCH === "true") {
+    ["Alternatives", "Foobar"].forEach(async (text) => {
+        const result = await assetClassesVectorStore
+            .similaritySearch("Alternatives", 5)
+            .then((docs) =>
+                docs.map((d) =>
+                    JSON.stringify({
+                        name: d.metadata.name,
+                        ...d.metadata,
+                    })
+                )
+            );
+        console.log(text, result);
+    });
+} else {
+    console.log("Similarity search skipped");
+}
+
+setInterval(() => {
+    console.log("Container is running...");
+}, 60000);

@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+    faiss-node-tester:
+        image: faiss-node-tester
+        environment:
+            NODE_ENV: production
+            RUN_SIMILARITY_SEARCH: false
