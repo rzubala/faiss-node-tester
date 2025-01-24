@@ -1,7 +1,7 @@
 # Faiss Node Tester
 
 A tester that verifies that faiss-node loading of embeddings works correctly.
-Using the `RUN_SIMILARITY_SEARCH` environment variable, you can run a similarity search verification although Google Auth configuration is required: [info](https://cloud.google.com/docs/authentication/getting-started)
+Using the `RUN_SIMILARITY_SEARCH` environment variable, you can also run a similarity search verification although Google Auth configuration is required: [info](https://cloud.google.com/docs/authentication/getting-started)
 
 # Image creation:
 ```bash
@@ -18,6 +18,6 @@ docker compose up
 pnpm i
 ```
 ```bash
-RUN_SIMILARITY_SEARCH=true  pnpm start
+RUN_SIMILARITY_SEARCH=true pnpm start
 ```
 

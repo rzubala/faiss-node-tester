@@ -10,6 +10,8 @@ COPY . ${APP_ROOT}/
 
 WORKDIR ${APP_ROOT}
 
+RUN rm -rf node_modules
+
 RUN pnpm install
 
 CMD ["node", "src/index.js"]
